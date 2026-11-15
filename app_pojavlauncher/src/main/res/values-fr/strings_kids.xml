@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kids_mode_title">Mode enfant</string>
+    <string name="kids_mode_summary">Masquer le bouton YouTube sur l\'écran principal</string>
+</resources>

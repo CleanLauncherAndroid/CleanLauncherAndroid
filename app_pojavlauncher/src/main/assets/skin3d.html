@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<style>
+html,body{margin:0;height:100%;background:#181818;overflow:hidden;font-family:sans-serif;color:#aaa}
+#scene{position:absolute;left:0;right:0;top:0;bottom:34px;perspective:900px;display:flex;align-items:center;justify-content:center;touch-action:none}
+#stage{position:relative;width:0;height:0;transform-style:preserve-3d}
+.box{position:absolute;transform-style:preserve-3d}
+.face{position:absolute;image-rendering:pixelated;background-repeat:no-repeat;backface-visibility:hidden;background-image:var(--tex)}
+#bar{position:absolute;left:0;right:0;bottom:0;height:34px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:13px}
+#bar button{background:#3a3a3a;color:#fff;border:0;border-radius:6px;width:44px;height:28px;font-size:18px}
+</style></head>
+<body>
+<div id="scene"><div id="stage"></div></div>
+<div id="bar"><button id="zm">&minus;</button><span id="hint"></span><button id="zp">+</button></div>
+<script>
+var S = 5, rx = -12, ry = -28, zoom = 1, texH = 64, slim = false, legacy = false;
+var stage = document.getElementById('stage'), scene = document.getElementById('scene');
+var lang = (navigator.language || 'en').slice(0, 2);
+document.getElementById('hint').textContent = lang === 'ar' ? 'اسحب للتدوير' : (lang === 'fr' ? 'Glisser pour pivoter' : 'Drag to rotate');
+var pending = false;
+function applyRot() {
+  stage.style.transform = 'scale(' + zoom + ') rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+  pending = false;
+}
+function schedule() { if (!pending) { pending = true; requestAnimationFrame(applyRot); } }
+function setZoom(z) { zoom = Math.max(0.5, Math.min(3, z)); schedule(); }
+var pts = {}, lx = 0, ly = 0, pinchD = 0;
+scene.addEventListener('pointerdown', function (e) {
+  pts[e.pointerId] = [e.clientX, e.clientY];
+  lx = e.clientX; ly = e.clientY;
+});
+scene.addEventListener('pointermove', function (e) {
+  if (!pts[e.pointerId]) return;
+  pts[e.pointerId] = [e.clientX, e.clientY];
+  var ids = Object.keys(pts);
+  if (ids.length >= 2) {
+    var a = pts[ids[0]], b = pts[ids[1]], d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+    if (pinchD > 0) setZoom(zoom * d / pinchD);
+    pinchD = d;
+    return;
+  }
+  // السحب للأعلى يرفع الرأس، وللأسفل يخفضه (الاتجاه الطبيعي)
+  ry += (e.clientX - lx) * 0.5;
+  rx -= (e.clientY - ly) * 0.5;
+  rx = Math.max(-80, Math.min(80, rx));
+  lx = e.clientX; ly = e.clientY;
+  schedule();
+});
+function endPtr(e) { delete pts[e.pointerId]; pinchD = 0; }
+scene.addEventListener('pointerup', endPtr);
+scene.addEventListener('pointercancel', endPtr);
+scene.addEventListener('wheel', function (e) { e.preventDefault(); setZoom(zoom * (e.deltaY < 0 ? 1.1 : 0.9)); }, { passive: false });
+document.getElementById('zp').onclick = function () { setZoom(zoom * 1.2); };
+document.getElementById('zm').onclick = function () { setZoom(zoom / 1.2); };
+
+// وجه واحد: أبعاده وموقعه داخل الخامة لا يتغيران، والتكبير يتم على المكعب كله
+function addFace(b, fw, fh, fu, fv, tr) {
+  var f = document.createElement('div'); f.className = 'face';
+  var FW = fw * S, FH = fh * S;
+  f.style.width = FW + 'px'; f.style.height = FH + 'px';
+  f.style.left = '50%'; f.style.top = '50%';
+  f.style.marginLeft = (-FW / 2) + 'px'; f.style.marginTop = (-FH / 2) + 'px';
+  f.style.backgroundSize = (64 * S) + 'px ' + (texH * S) + 'px';
+  f.style.backgroundPosition = (-fu * S) + 'px ' + (-fv * S) + 'px';
+  f.style.transform = tr;
+  b.appendChild(f);
+}
+// المكعب بأبعاده الأصلية، والطبقة الخارجية تُكبَّر بـ scale3d حول مركزها
+function makeBox(cx, cy, w, h, d, u, v, inf) {
+  var b = document.createElement('div'); b.className = 'box';
+  var W = w * S, H = h * S, D = d * S;
+  b.style.width = W + 'px'; b.style.height = H + 'px';
+  b.style.left = (cx * S - W / 2) + 'px'; b.style.top = (cy * S - H / 2) + 'px';
+  if (inf) { var k = 1 + inf; b.style.transform = 'scale3d(' + k + ',' + k + ',' + k + ')'; }
+  addFace(b, w, h, u + d, v + d, 'translateZ(' + (D / 2) + 'px)');
+  addFace(b, w, h, u + d + w + d, v + d, 'rotateY(180deg) translateZ(' + (D / 2) + 'px)');
+  addFace(b, d, h, u + d + w, v + d, 'rotateY(90deg) translateZ(' + (W / 2) + 'px)');
+  addFace(b, d, h, u, v + d, 'rotateY(-90deg) translateZ(' + (W / 2) + 'px)');
+  addFace(b, w, d, u + d, v, 'rotateX(90deg) translateZ(' + (H / 2) + 'px)');
+  addFace(b, w, d, u + d + w, v, 'rotateX(-90deg) translateZ(' + (H / 2) + 'px)');
+  stage.appendChild(b);
+}
+function build() {
+  stage.innerHTML = '';
+  var aw = slim ? 3 : 4;
+  makeBox(0, -10, 8, 8, 8, 0, 0, 0);
+  makeBox(0, 0, 8, 12, 4, 16, 16, 0);
+  makeBox(-(4 + aw / 2), 0, aw, 12, 4, 40, 16, 0);
+  makeBox(4 + aw / 2, 0, aw, 12, 4, legacy ? 40 : 32, legacy ? 16 : 48, 0);
+  makeBox(-2, 12, 4, 12, 4, 0, 16, 0);
+  makeBox(2, 12, 4, 12, 4, legacy ? 0 : 16, legacy ? 16 : 48, 0);
+  if (!legacy) {
+    makeBox(0, -10, 8, 8, 8, 32, 0, 0.06);
+    makeBox(0, 0, 8, 12, 4, 16, 32, 0.04);
+    makeBox(-(4 + aw / 2), 0, aw, 12, 4, 40, 32, 0.04);
+    makeBox(4 + aw / 2, 0, aw, 12, 4, 48, 48, 0.04);
+    makeBox(-2, 12, 4, 12, 4, 0, 32, 0.04);
+    makeBox(2, 12, 4, 12, 4, 0, 48, 0.04);
+  }
+  applyRot();
+}
+window.setSkin = function (t, s, l) {
+  document.documentElement.style.setProperty('--tex', "url('" + t + "')");
+  slim = s; legacy = l; texH = l ? 32 : 64;
+  build();
+};
+</script>
+</body></html>

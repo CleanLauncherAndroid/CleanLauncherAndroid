@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="skins_title">السكنات</string>
+    <string name="skin_upload">رفع سكن من الجهاز</string>
+    <string name="skin_front">أمام</string>
+    <string name="skin_back">خلف</string>
+    <string name="skin_confirm">تأكيد وتطبيق</string>
+    <string name="skin_delete">حذف</string>
+    <string name="skin_hint">اختر سكناً ثم اضغط تأكيد ليُطبَّق في اللعبة</string>
+    <string name="skin_bad_size">مقاس السكن يجب أن يكون 64×64 أو 64×32</string>
+    <string name="skin_read_error">تعذر قراءة الملف</string>
+    <string name="skin_type_title">نوع السكن</string>
+    <string name="skin_save_error">فشل الحفظ</string>
+    <string name="skin_uploaded">تم رفع السكن. اضغط تأكيد ليُطبَّق</string>
+    <string name="skin_pick_first">اختر سكناً أولاً</string>
+    <string name="skin_applied">تم تطبيق السكن: %1$s (يُطبَّق في اللعبة مع كل تشغيل)</string>
+    <string name="skin_apply_error">فشل التطبيق</string>
+    <string name="skin_deleted">تم حذف السكن</string>
+    <string name="skin_model_auto">اختيار تلقائي</string>
+    <string name="skins_button">السكنات</string>
+    <string name="skin_back_menu">العودة للقائمة الرئيسية</string>
+    <string name="skin_3d">عرض ثلاثي الأبعاد</string>
+    <string name="skin_name_title">اسم السكن</string>
+    <string name="skin_library">المكتبة</string>
+    <string name="skin_library_title">مكتبة السكنات</string>
+    <string name="skin_library_empty">المكتبة فارغة. ضع ملفات السكنات (PNG) في:
+%1$s</string>
+    <string name="skin_library_added">تمت إضافة السكن إلى قائمتك</string>
+    <string name="app_language_title">لغة التطبيق</string>
+    <string name="app_language_system">لغة الجهاز</string>
+    <string name="social_update_none">التحديث: لا عمل له حالياً</string>
+    <string name="social_no_browser">لا يوجد متصفح</string>
+    <string name="social_youtube_label">يوتيوب</string>
+    <string name="social_update_label">تحديث</string>
+    <string name="skin_profile_label">البروفايل</string>
+    <string name="mods_button">المودات</string>
+    <string name="mods_title">المودات</string>
+</resources>

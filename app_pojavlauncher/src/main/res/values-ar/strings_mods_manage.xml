@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mods_manage">المودات المثبتة</string>
+    <string name="mods_delete_q">حذف هذا المود؟</string>
+    <string name="mods_delete">حذف</string>
+    <string name="mods_cancel">إلغاء</string>
+</resources>

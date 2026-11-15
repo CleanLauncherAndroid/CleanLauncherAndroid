@@ -1,0 +1,149 @@
+Configuration on demand is an incubating feature.
+
+> Configure project :app_pojavlauncher
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+BUILD: You have no CurseForge key, the curseforge api will get disabled !
+WARNING: BuildType 'proguard' is both debuggable and has 'isMinifyEnabled' set to true.
+All code optimizations and obfuscation are disabled for debuggable builds.
+
+> Configure project :arc_dns_injector
+not inside a git repository
+
+> Configure project :forge_installer
+not inside a git repository
+
+> Configure project :jre_lwjgl3glfw
+not inside a git repository
+lwjgl-opengl.jar
+lwjgl-freetype.jar
+lwjgl-glfw.jar
+lwjgl-tinyfd.jar
+lwjgl-openal.jar
+lwjgl-lwjglx.jar
+lwjgl.jar
+lwjgl-jemalloc.jar
+jsr305.jar
+lwjgl-nanovg.jar
+lwjgl-stb.jar
+
+> Task :app_pojavlauncher:preBuild UP-TO-DATE
+> Task :app_pojavlauncher:preDebugBuild UP-TO-DATE
+> Task :app_pojavlauncher:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app_pojavlauncher:generateDebugBuildConfig UP-TO-DATE
+> Task :app_pojavlauncher:javaPreCompileDebug UP-TO-DATE
+> Task :app_pojavlauncher:checkDebugAarMetadata UP-TO-DATE
+> Task :app_pojavlauncher:generateDebugResValues UP-TO-DATE
+> Task :app_pojavlauncher:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app_pojavlauncher:generateDebugResources UP-TO-DATE
+> Task :app_pojavlauncher:mergeDebugResources UP-TO-DATE
+> Task :app_pojavlauncher:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app_pojavlauncher:extractDeepLinksDebug UP-TO-DATE
+> Task :app_pojavlauncher:processDebugMainManifest UP-TO-DATE
+> Task :app_pojavlauncher:processDebugManifest UP-TO-DATE
+> Task :app_pojavlauncher:processDebugManifestForPackage UP-TO-DATE
+> Task :app_pojavlauncher:processDebugResources UP-TO-DATE
+
+> Task :app_pojavlauncher:compileDebugJavaWithJavac
+Java compiler version 21 has deprecated support for compiling with source/target version 8.
+Try one of the following options:
+    1. [Recommended] Use Java toolchain with a lower language version
+    2. Set a higher source/target version
+    3. Use a lower version of the JDK running the build (if you're not using Java toolchain)
+For more details on how to configure these settings, see https://developer.android.com/build/jdks.
+To suppress this warning, set android.javaCompile.suppressSourceTargetDeprecationWarning=true in gradle.properties.
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+
+> Task :app_pojavlauncher:mergeDebugShaders UP-TO-DATE
+> Task :app_pojavlauncher:compileDebugShaders NO-SOURCE
+> Task :app_pojavlauncher:generateDebugAssets UP-TO-DATE
+> Task :arc_dns_injector:compileJava UP-TO-DATE
+> Task :arc_dns_injector:processResources NO-SOURCE
+> Task :arc_dns_injector:classes UP-TO-DATE
+> Task :arc_dns_injector:jar UP-TO-DATE
+> Task :forge_installer:compileJava UP-TO-DATE
+> Task :forge_installer:processResources NO-SOURCE
+> Task :forge_installer:classes UP-TO-DATE
+> Task :forge_installer:jar UP-TO-DATE
+> Task :jre_lwjgl3glfw:compileJava UP-TO-DATE
+> Task :jre_lwjgl3glfw:processResources NO-SOURCE
+> Task :jre_lwjgl3glfw:classes UP-TO-DATE
+
+> Task :jre_lwjgl3glfw:jar UP-TO-DATE
+lwjgl-opengl.jar
+lwjgl-freetype.jar
+lwjgl-glfw.jar
+lwjgl-tinyfd.jar
+lwjgl-openal.jar
+lwjgl-lwjglx.jar
+lwjgl.jar
+lwjgl-jemalloc.jar
+jsr305.jar
+lwjgl-nanovg.jar
+lwjgl-stb.jar
+lwjgl-opengl.jar
+lwjgl-freetype.jar
+lwjgl-glfw.jar
+lwjgl-tinyfd.jar
+lwjgl-openal.jar
+lwjgl-lwjglx.jar
+lwjgl.jar
+lwjgl-jemalloc.jar
+jsr305.jar
+lwjgl-nanovg.jar
+lwjgl-stb.jar
+
+> Task :app_pojavlauncher:mergeDebugAssets UP-TO-DATE
+> Task :app_pojavlauncher:compressDebugAssets UP-TO-DATE
+> Task :app_pojavlauncher:processDebugJavaRes NO-SOURCE
+> Task :app_pojavlauncher:mergeDebugJavaResource UP-TO-DATE
+> Task :app_pojavlauncher:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app_pojavlauncher:desugarDebugFileDependencies UP-TO-DATE
+> Task :app_pojavlauncher:mergeExtDexDebug UP-TO-DATE
+> Task :app_pojavlauncher:mergeLibDexDebug UP-TO-DATE
+> Task :app_pojavlauncher:dexBuilderDebug
+> Task :app_pojavlauncher:preProguardBuild UP-TO-DATE
+> Task :app_pojavlauncher:configureNdkBuildDebug[arm64-v8a]
+> Task :app_pojavlauncher:mergeProjectDexDebug
+
+> Task :app_pojavlauncher:buildNdkBuildDebug[arm64-v8a]
+C/C++: rm: cannot remove '/home/abdo/AndroidProjects/CleanLauncher-v41/app_pojavlauncher/src/main/jni/../jniLibs/*/libawt_headless.so': No such file or directory
+
+> Task :app_pojavlauncher:configureNdkBuildDebug[armeabi-v7a]
+
+> Task :app_pojavlauncher:buildNdkBuildDebug[armeabi-v7a]
+C/C++: rm: cannot remove '/home/abdo/AndroidProjects/CleanLauncher-v41/app_pojavlauncher/src/main/jni/../jniLibs/*/libawt_headless.so': No such file or directory
+
+> Task :app_pojavlauncher:configureNdkBuildDebug[x86]
+
+> Task :app_pojavlauncher:buildNdkBuildDebug[x86]
+C/C++: rm: cannot remove '/home/abdo/AndroidProjects/CleanLauncher-v41/app_pojavlauncher/src/main/jni/../jniLibs/*/libawt_headless.so': No such file or directory
+
+> Task :app_pojavlauncher:configureNdkBuildDebug[x86_64]
+
+> Task :app_pojavlauncher:buildNdkBuildDebug[x86_64]
+C/C++: rm: cannot remove '/home/abdo/AndroidProjects/CleanLauncher-v41/app_pojavlauncher/src/main/jni/../jniLibs/*/libawt_headless.so': No such file or directory
+
+> Task :app_pojavlauncher:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app_pojavlauncher:mergeDebugNativeLibs UP-TO-DATE
+> Task :app_pojavlauncher:stripDebugDebugSymbols UP-TO-DATE
+> Task :app_pojavlauncher:validateSigningDebug UP-TO-DATE
+> Task :app_pojavlauncher:writeDebugAppMetadata UP-TO-DATE
+> Task :app_pojavlauncher:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app_pojavlauncher:packageDebug
+> Task :app_pojavlauncher:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app_pojavlauncher:assembleDebug
+
+[Incubating] Problems report is available at: file:///home/abdo/AndroidProjects/CleanLauncher-v41/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 19s
+46 actionable tasks: 12 executed, 34 up-to-date

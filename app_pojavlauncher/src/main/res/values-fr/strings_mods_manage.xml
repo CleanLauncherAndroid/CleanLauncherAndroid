@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mods_manage">Mods installés</string>
+    <string name="mods_delete_q">Supprimer ce mod ?</string>
+    <string name="mods_delete">Supprimer</string>
+    <string name="mods_cancel">Annuler</string>
+</resources>

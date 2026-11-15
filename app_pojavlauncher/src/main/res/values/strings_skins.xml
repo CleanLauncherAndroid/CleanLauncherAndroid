@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="skins_title">Skins</string>
+    <string name="skin_upload">Upload skin from device</string>
+    <string name="skin_front">Front</string>
+    <string name="skin_back">Back</string>
+    <string name="skin_confirm">Confirm and apply</string>
+    <string name="skin_delete">Delete</string>
+    <string name="skin_hint">Pick a skin then press Confirm to apply it in the game</string>
+    <string name="skin_bad_size">Skin size must be 64×64 or 64×32</string>
+    <string name="skin_read_error">Could not read the file</string>
+    <string name="skin_type_title">Skin type</string>
+    <string name="skin_save_error">Failed to save</string>
+    <string name="skin_uploaded">Skin uploaded. Press Confirm to apply</string>
+    <string name="skin_pick_first">Pick a skin first</string>
+    <string name="skin_applied">Skin applied: %1$s (applied on every launch)</string>
+    <string name="skin_apply_error">Failed to apply</string>
+    <string name="skin_deleted">Skin deleted</string>
+    <string name="skin_model_auto">Auto detect</string>
+    <string name="skins_button">Skins</string>
+    <string name="skin_back_menu">Back to menu</string>
+    <string name="skin_3d">Show in 3D</string>
+    <string name="skin_name_title">Skin name</string>
+    <string name="skin_library">Library</string>
+    <string name="skin_library_title">Skin library</string>
+    <string name="skin_library_empty">The library is empty. Put PNG skins in:
+%1$s</string>
+    <string name="skin_library_added">Skin added to your list</string>
+    <string name="app_language_title">App language</string>
+    <string name="app_language_system">System default</string>
+    <string-array name="app_language_entries">
+        <item>@string/app_language_system</item>
+        <item>العربية</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+    <string-array name="app_language_values">
+        <item>system</item>
+        <item>ar</item>
+        <item>en</item>
+        <item>fr</item>
+    </string-array>
+    <string name="social_update_none">Update: no action yet</string>
+    <string name="social_no_browser">No browser found</string>
+    <string name="social_youtube_label">YouTube</string>
+    <string name="social_update_label">Update</string>
+    <string name="skin_profile_label">Profile</string>
+    <string name="mods_button">MODS</string>
+    <string name="mods_title">Mods</string>
+</resources>

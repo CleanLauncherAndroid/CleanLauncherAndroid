@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="skins_title">Skins</string>
+    <string name="skin_upload">Importer un skin depuis l\'appareil</string>
+    <string name="skin_front">Avant</string>
+    <string name="skin_back">Arrière</string>
+    <string name="skin_confirm">Confirmer et appliquer</string>
+    <string name="skin_delete">Supprimer</string>
+    <string name="skin_hint">Choisissez un skin puis appuyez sur Confirmer pour l\'appliquer dans le jeu</string>
+    <string name="skin_bad_size">La taille du skin doit être 64×64 ou 64×32</string>
+    <string name="skin_read_error">Impossible de lire le fichier</string>
+    <string name="skin_type_title">Type de skin</string>
+    <string name="skin_save_error">Échec de l\'enregistrement</string>
+    <string name="skin_uploaded">Skin importé. Appuyez sur Confirmer pour l\'appliquer</string>
+    <string name="skin_pick_first">Choisissez d\'abord un skin</string>
+    <string name="skin_applied">Skin appliqué : %1$s (appliqué à chaque lancement)</string>
+    <string name="skin_apply_error">Échec de l\'application</string>
+    <string name="skin_deleted">Skin supprimé</string>
+    <string name="skin_model_auto">Détection automatique</string>
+    <string name="skins_button">Skins</string>
+    <string name="skin_back_menu">Retour au menu</string>
+    <string name="skin_3d">Afficher en 3D</string>
+    <string name="skin_name_title">Nom du skin</string>
+    <string name="skin_library">Bibliothèque</string>
+    <string name="skin_library_title">Bibliothèque de skins</string>
+    <string name="skin_library_empty">La bibliothèque est vide. Placez les skins PNG dans :
+%1$s</string>
+    <string name="skin_library_added">Skin ajouté à votre liste</string>
+    <string name="app_language_title">Langue de l\'application</string>
+    <string name="app_language_system">Langue du système</string>
+    <string name="social_update_none">Mise à jour : pas encore disponible</string>
+    <string name="social_no_browser">Aucun navigateur trouvé</string>
+    <string name="social_youtube_label">YouTube</string>
+    <string name="social_update_label">Mise à jour</string>
+    <string name="skin_profile_label">Profil</string>
+    <string name="mods_button">MODS</string>
+    <string name="mods_title">Mods</string>
+</resources>
